@@ -11,11 +11,13 @@ def longestSubSequence(sequence: List[int]) -> int:
     max_val = dp_array[0]
     for i in range(1,len(sequence)):
         for j in range(i):
-            if sequence[i] < sequence[j]:
-                dp_array[i] = dp_array[j] + 1 if dp_array[j] + 1 < dp_array[i] else dp_array[i]
-                if dp_array[i] > max:
+            if sequence[i] > sequence[j]: #checking if sequence[i] is greater than sequence[j]
+                dp_array[i] = dp_array[j] + 1 if dp_array[j] + 1 > dp_array[i] else dp_array[i]
+                if dp_array[i] > max_val:
                     max_val = dp_array[i]
     return max_val
+
+print(longestSubSequence([1,2,3,7,3,9,-2,14]))
 
 
 
