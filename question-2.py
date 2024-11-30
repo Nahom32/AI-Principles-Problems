@@ -23,7 +23,7 @@ def findEmpty(board: List[List[int]]) -> Tuple[int,int]:
             if board[i][j] == 0:
                 return (i,j)
     return (-1,-1)
-def solve(board: List[List[int]]) -> bool:
+def solveBoard(board: List[List[int]]) -> bool:
     '''
         This piece of code is a recursive implementation for backtracking and finding the best solution for
         the problem.
@@ -36,7 +36,7 @@ def solve(board: List[List[int]]) -> bool:
         if isValid(board, row, column, i):
             board[row][column] = i
         
-        if solve(board):
+        if solveBoard(board):
             return True
         board[row][column] = 0
     return False

@@ -17,6 +17,12 @@ def longestSubSequence(sequence: List[int]) -> int:
                     max_val = dp_array[i]
     return max_val
 
+
+        
+
+
+
+
 print(longestSubSequence([1,2,3,7,3,9,-2,14]))
 
 
